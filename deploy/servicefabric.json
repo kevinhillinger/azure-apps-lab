@@ -1,6 +1,6 @@
 {
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
-    "contentVersion": "1.0.0.0",
+    "contentVersion": "1.0.0.1",
     "parameters": {
        "nameSuffix": {
             "type": "string",
@@ -152,7 +152,7 @@
             "location": "[parameters('location')]",
             "properties": {
                 "dnsSettings": {
-                    "domainNameLabel": "[variables('clusterName')]"
+                    "domainNameLabel": "[concat(variables('clusterName'), '-', toLower(uniqueString(resourceGroup().id)) )]"
                 },
                 "publicIPAllocationMethod": "Dynamic"
             },
