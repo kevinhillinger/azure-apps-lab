@@ -1,0 +1,29 @@
+﻿@*TODO Exercise 10 - Task 3  - uncomment everything below to enable sign in / user status*@
+@*@if (
+    Request.IsAuthenticated)
+{
+    <text>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a id="profile-link"><span class="glyphicon glyphicon-user"></span> @User.Identity.Name</a>
+                <div id="profile-options" class="nav navbar-nav navbar-right">
+                    <ul class="profile-links">
+                        <li class="profile-link">
+                            <a href="@Url.Action("Profile", "Account")"><span class="glyphicon glyphicon-pencil"></span> Edit Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="@Url.Action("SignOut", "Account")"><span class="glyphicon glyphicon-log-out"></span> Sign out</a>
+            </li>
+        </ul>
+    </text>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li><a id="signUpLink" href="@Url.Action("SignUp", "Account")"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+        <li><a id="loginLink" href="@Url.Action("SignIn", "Account")"><span class="glyphicon glyphicon-log-in"></span> Sign in</a></li>
+    </ul>
+}*@

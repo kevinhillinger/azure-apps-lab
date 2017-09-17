@@ -1,0 +1,57 @@
+﻿@model Event
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@section herocontent {
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="hero-content-wrapper">
+                    <h1>Contoso Events</h1>
+                    <h3 class="text-thin">Welcome to the Contoso Events.</h3>
+                    <p>Browse and book your favorite events in a few clicks.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        @if (Model == null)
+        {
+            <h2>There are currently no events on sale.</h2>
+        }
+        else
+        {
+            <h2>On Sale Now: <i>@Model.Name</i></h2>
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img class="card-img-top" src="~/Content/images/band.jpg" />
+                        <span class="label label-success price-tag">@Model.PricePerTicket @Model.Currency</span>
+                        <div class="caption">
+                            <h4>@Model.Name</h4>
+                            <hr />
+                            <div class="event-detail">
+                                <span class="glyphicon glyphicon-map-marker"></span> Seattle
+                            </div>
+                            <div class="event-detail text-uppercase">
+                                <span class="glyphicon glyphicon-calendar"></span> @String.Format("{0:dd/MMM/yyyy}", @Model.StartDate)
+                            </div>
+                            <div class="event-detail text-uppercase">
+                                <span class="glyphicon glyphicon-time"></span> @String.Format("{0:hh:mm}", @Model.StartDate)
+                            </div>
+                            <hr />
+                            <div class="event-order">
+                                @Html.ActionLink("Order tickets now", "Order", "Events", new { id = Model.Id }, new { @class = "btn btn-default btn-primary" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

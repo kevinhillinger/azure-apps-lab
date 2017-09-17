@@ -1,0 +1,37 @@
+﻿@model Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.OrderDate)</dt>
+        <dd>@Html.DisplayFor(model => model.OrderDate)</dd>
+        <dt>@Html.DisplayNameFor(model => model.FulfillDate)</dt>
+        <dd>@Html.DisplayFor(model => model.FulfillDate)</dd>
+        <dt>@Html.DisplayNameFor(model => model.CancellationDate)</dt>
+        <dd>@Html.DisplayFor(model => model.CancellationDate)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Tag)</dt>
+        <dd>@Html.DisplayFor(model => model.Tag)</dd>
+        <dt>@Html.DisplayNameFor(model => model.EventId)</dt>
+        <dd>@Html.DisplayFor(model => model.EventId)</dd>
+        <dt>@Html.DisplayNameFor(model => model.PaymentProcessorTokenId)</dt>
+        <dd>@Html.DisplayFor(model => model.PaymentProcessorTokenId)</dd>
+        <dt>@Html.DisplayNameFor(model => model.PaymentProcessorConfirmation)</dt>
+        <dd>@Html.DisplayFor(model => model.PaymentProcessorConfirmation)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Tickets)</dt>
+        <dd>@Html.DisplayFor(model => model.Tickets)</dd>
+        <dt>@Html.DisplayNameFor(model => model.IsFulfilled)</dt>
+        <dd>@Html.DisplayFor(model => model.IsFulfilled)</dd>
+        <dt>@Html.DisplayNameFor(model => model.IsCancelled)</dt>
+        <dd>@Html.DisplayFor(model => model.IsCancelled)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Note)</dt>
+        <dd>@Html.DisplayFor(model => model.Note)</dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+</p>

@@ -53,9 +53,9 @@ namespace ContosoEvents.Models
         public bool IsCancelled { get; set; }
         [DataMember]
         public string Note { get; set; }
-
-        [DataMember]
-        public OrderStatuses Status { get; set; }
+        //TODO: Exercise 6 - Task 1
+        //[DataMember]
+        //public OrderStatuses Status { get; set; }
 
         public static void Validate(TicketOrder order)
         {
@@ -82,12 +82,13 @@ namespace ContosoEvents.Models
         }
     }
 
-    public enum OrderStatuses
-    {
-        Fufilled,
-        TicketsExhausted,
-        CreditCardDenied,
-        Cancelled,
-        Invalid
-    }
+    //TODO Exercise 6 - Task 1 
+    //public enum OrderStatuses
+    //{
+    //    Fufilled,
+    //    TicketsExhausted,
+    //    CreditCardDenied,
+    //    Cancelled,
+    //    Invalid
+    //}
 }

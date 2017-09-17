@@ -159,7 +159,8 @@ namespace ContosoEvents.TicketOrderActor
                         state.FulfillDate = null;
                         state.IsFulfilled = false;
                         state.Note = "The Event ID is not valid!";
-                        state.Status = OrderStatuses.Invalid;
+                        //TODO: Exercise 6 - Task 1 
+                        //state.Status = OrderStatuses.Invalid;
                     }
                     else
                     {
@@ -179,7 +180,8 @@ namespace ContosoEvents.TicketOrderActor
                                 state.PaymentProcessorConfirmation = confirmationNumber;
                                 state.FulfillDate = DateTime.Now;
                                 state.IsFulfilled = true;
-                                state.Status = OrderStatuses.Fufilled;
+                                //TODO: Exercise 6 - Task 1 
+                                //state.Status = OrderStatuses.Fufilled;
                             }
                             else
                             {
@@ -187,7 +189,8 @@ namespace ContosoEvents.TicketOrderActor
                                 state.IsFulfilled = false;
                                 state.Note = "Credit card failed to authorize!";
                                 await eventActor.FailTickets(order);
-                                state.Status = OrderStatuses.CreditCardDenied;
+                                //TODO: Exercise 6 - Task 1 
+                                //state.Status = OrderStatuses.CreditCardDenied;
                             }
                         }
                         else
@@ -195,7 +198,8 @@ namespace ContosoEvents.TicketOrderActor
                             state.FulfillDate = null;
                             state.IsFulfilled = false;
                             state.Note = "Event Tickets are exhausted!";
-                            state.Status = OrderStatuses.TicketsExhausted;
+                            //TODO: Exercise 6 - Task 1 
+                            //state.Status = OrderStatuses.TicketsExhausted;
                         }
                     }
                 }
@@ -203,7 +207,8 @@ namespace ContosoEvents.TicketOrderActor
                 {
                     state.FulfillDate = null;
                     state.IsFulfilled = false;
-                    state.Status = OrderStatuses.Invalid;
+                    //TODO: Exercise 6 - Task 1 
+                    //state.Status = OrderStatuses.Invalid;
                 }
 
                 // Make sure the state is saved
@@ -252,7 +257,8 @@ namespace ContosoEvents.TicketOrderActor
                 state.CancellationDate = DateTime.Now;
                 state.IsFulfilled = false;
                 state.IsCancelled = true;
-                state.Status = OrderStatuses.Cancelled;
+                //TODO: Exercise 6 - Task 1 
+                //state.Status = OrderStatuses.Cancelled;
 
                 // Make sure the state is saved
                 await SetEntityStateAsync(state);
