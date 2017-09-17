@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.11",
+  "contentVersion": "1.0.0.12",
   "parameters": {
      "microsoftAlias": {
       "type": "string",
@@ -27,8 +27,8 @@
 
   "variables": {
     "templateUriBase": "https://raw.githubusercontent.com/kevinhillinger/azure-apps-lab/master/deploy/",
-    "apiAdminEmail": "[concat(parameters('microsoftAlias'), '@microsoft.com')]",
-    "nameSuffix": "[toLower(parameters('microsoftAlias'))]"
+    "nameSuffix": "[toLower(parameters('microsoftAlias'))]",
+    "apiAdminEmail": "[concat(variables('nameSuffix'), '@microsoft.com')]"
   },
   "resources": [
    {
