@@ -1,0 +1,35 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "adminEmail": {
+            "type": "string"
+        }
+    },
+   "variables": {
+      "orgName": "Contoso Events",
+      "tier": "Developer"
+   },
+    "resources": [
+        {
+            "apiVersion": "2016-10-10",
+            "name": "[parameters('name')]",
+            "location": "[parameters('location')]",
+            "type": "Microsoft.ApiManagement/service",
+            "sku": {
+                "name": "[variables('tier')]",
+                "capacity": 1
+            },
+            "properties": {
+                "publisherEmail": "[parameters('adminEmail')]",
+                "publisherName": "[variables('orgName')]"
+            }
+        }
+    ]
+}

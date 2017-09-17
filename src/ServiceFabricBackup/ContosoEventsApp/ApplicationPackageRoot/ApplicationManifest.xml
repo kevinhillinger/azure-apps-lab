@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="ContosoEventsAppType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="TicketOrderService_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="TicketOrderService_PartitionCount" DefaultValue="1" />
+    <Parameter Name="TicketOrderService_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="WebApi_InstanceCount" DefaultValue="-1" />
+    <Parameter Name="TicketOrderActorService_PartitionCount" DefaultValue="10" />
+    <Parameter Name="TicketOrderActorService_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="TicketOrderActorService_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="EventActorService_PartitionCount" DefaultValue="10" />
+    <Parameter Name="EventActorService_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="EventActorService_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="DataStorageEndpointUri" DefaultValue="" />
+    <Parameter Name="DataStoragePrimaryKey" DefaultValue="" />
+    <Parameter Name="DataStorageDatabaseName" DefaultValue="" />
+    <Parameter Name="DataStorageEventsCollectionName" DefaultValue="" />
+    <Parameter Name="DataStorageOrdersCollectionName" DefaultValue="" />
+    <Parameter Name="DataStorageLogMessagesCollectionName" DefaultValue="" />
+    <Parameter Name="StorageConnectionString" DefaultValue="" />
+    <Parameter Name="LogsStorageTableName" DefaultValue="" />
+    <Parameter Name="ExternalizationQueueName" DefaultValue="" />
+    <Parameter Name="SimulationQueueName" DefaultValue="" />
+    <Parameter Name="BackupQueueName" DefaultValue="" />
+    <Parameter Name="LogQueueName" DefaultValue="" />
+    <Parameter Name="IsTicketAvailabilityCheck" DefaultValue="" />
+    <Parameter Name="IsEtwLogging" DefaultValue="" />
+    <Parameter Name="IsAzureTableStorageLogging" DefaultValue="" />
+    <Parameter Name="IsAzureFunctionLogging" DefaultValue="" />
+    <Parameter Name="StatefulServiceLoopPause" DefaultValue="1" />
+    <Parameter Name="ActorBackupReminderDueInMinutes" DefaultValue="" />
+    <Parameter Name="ActorBackupReminderPeriodicInMinutes" DefaultValue="" />
+    <Parameter Name="HealthIssuesTimeToLive" DefaultValue="" />
+    <Parameter Name="EmailServerUrl" DefaultValue="" />
+    <Parameter Name="EmailServerPort" DefaultValue="" />
+    <Parameter Name="EmailServerUserName" DefaultValue="" />
+    <Parameter Name="EmailServerPassword" DefaultValue="" />
+  </Parameters>
+  <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
+       should match the Name and Version attributes of the ServiceManifest element defined in the 
+       ServiceManifest.xml file. -->
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="ContosoEvents.EventActorPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides>
+      <ConfigOverride Name="Config">
+        <Settings>
+          <Section Name="ServiceRunTimeConfig">
+            <Parameter Name="DataStorageEndpointUri" Value="[DataStorageEndpointUri]" />
+            <Parameter Name="DataStoragePrimaryKey" Value="[DataStoragePrimaryKey]" />
+            <Parameter Name="DataStorageDatabaseName" Value="[DataStorageDatabaseName]" />
+            <Parameter Name="DataStorageEventsCollectionName" Value="[DataStorageEventsCollectionName]" />
+            <Parameter Name="DataStorageOrdersCollectionName" Value="[DataStorageOrdersCollectionName]" />
+            <Parameter Name="DataStorageLogMessagesCollectionName" Value="[DataStorageLogMessagesCollectionName]" />
+            <Parameter Name="StorageConnectionString" Value="[StorageConnectionString]" />
+            <Parameter Name="LogsStorageTableName" Value="[LogsStorageTableName]" />
+            <Parameter Name="ExternalizationQueueName" Value="[ExternalizationQueueName]" />
+            <Parameter Name="SimulationQueueName" Value="[SimulationQueueName]" />
+            <Parameter Name="BackupQueueName" Value="[BackupQueueName]" />
+            <Parameter Name="LogQueueName" Value="[LogQueueName]" />
+            <Parameter Name="IsTicketAvailabilityCheck" Value="[IsTicketAvailabilityCheck]" />
+            <Parameter Name="IsEtwLogging" Value="[IsEtwLogging]" />
+            <Parameter Name="IsAzureTableStorageLogging" Value="[IsAzureTableStorageLogging]" />
+            <Parameter Name="IsAzureFunctionLogging" Value="[IsAzureFunctionLogging]" />
+            <Parameter Name="HealthIssuesTimeToLive" Value="[HealthIssuesTimeToLive]" />
+            <Parameter Name="EmailServerUrl" Value="[EmailServerUrl]" />
+            <Parameter Name="EmailServerPort" Value="[EmailServerPort]" />
+            <Parameter Name="EmailServerUserName" Value="[EmailServerUserName]" />
+            <Parameter Name="EmailServerPassword" Value="[EmailServerPassword]" />
+          </Section>
+        </Settings>
+      </ConfigOverride>
+    </ConfigOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="ContosoEvents.TicketOrderActorPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides>
+      <ConfigOverride Name="Config">
+        <Settings>
+          <Section Name="ServiceRunTimeConfig">
+            <Parameter Name="DataStorageEndpointUri" Value="[DataStorageEndpointUri]" />
+            <Parameter Name="DataStoragePrimaryKey" Value="[DataStoragePrimaryKey]" />
+            <Parameter Name="DataStorageDatabaseName" Value="[DataStorageDatabaseName]" />
+            <Parameter Name="DataStorageEventsCollectionName" Value="[DataStorageEventsCollectionName]" />
+            <Parameter Name="DataStorageOrdersCollectionName" Value="[DataStorageOrdersCollectionName]" />
+            <Parameter Name="DataStorageLogMessagesCollectionName" Value="[DataStorageLogMessagesCollectionName]" />
+            <Parameter Name="StorageConnectionString" Value="[StorageConnectionString]" />
+            <Parameter Name="LogsStorageTableName" Value="[LogsStorageTableName]" />
+            <Parameter Name="ExternalizationQueueName" Value="[ExternalizationQueueName]" />
+            <Parameter Name="SimulationQueueName" Value="[SimulationQueueName]" />
+            <Parameter Name="BackupQueueName" Value="[BackupQueueName]" />
+            <Parameter Name="LogQueueName" Value="[LogQueueName]" />
+            <Parameter Name="IsTicketAvailabilityCheck" Value="[IsTicketAvailabilityCheck]" />
+            <Parameter Name="IsEtwLogging" Value="[IsEtwLogging]" />
+            <Parameter Name="IsAzureTableStorageLogging" Value="[IsAzureTableStorageLogging]" />
+            <Parameter Name="IsAzureFunctionLogging" Value="[IsAzureFunctionLogging]" />
+            <Parameter Name="ActorBackupReminderDueInMinutes" Value="[ActorBackupReminderDueInMinutes]" />
+            <Parameter Name="ActorBackupReminderPeriodicInMinutes" Value="[ActorBackupReminderPeriodicInMinutes]" />
+            <Parameter Name="HealthIssuesTimeToLive" Value="[HealthIssuesTimeToLive]" />
+            <Parameter Name="EmailServerUrl" Value="[EmailServerUrl]" />
+            <Parameter Name="EmailServerPort" Value="[EmailServerPort]" />
+            <Parameter Name="EmailServerUserName" Value="[EmailServerUserName]" />
+            <Parameter Name="EmailServerPassword" Value="[EmailServerPassword]" />
+          </Section>
+        </Settings>
+      </ConfigOverride>
+    </ConfigOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="ContosoEvents.TicketOrderServicePkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides>
+      <ConfigOverride Name="Config">
+        <Settings>
+          <Section Name="ServiceRunTimeConfig">
+            <Parameter Name="DataStorageEndpointUri" Value="[DataStorageEndpointUri]" />
+            <Parameter Name="DataStoragePrimaryKey" Value="[DataStoragePrimaryKey]" />
+            <Parameter Name="DataStorageDatabaseName" Value="[DataStorageDatabaseName]" />
+            <Parameter Name="DataStorageEventsCollectionName" Value="[DataStorageEventsCollectionName]" />
+            <Parameter Name="DataStorageOrdersCollectionName" Value="[DataStorageOrdersCollectionName]" />
+            <Parameter Name="DataStorageLogMessagesCollectionName" Value="[DataStorageLogMessagesCollectionName]" />
+            <Parameter Name="StorageConnectionString" Value="[StorageConnectionString]" />
+            <Parameter Name="LogsStorageTableName" Value="[LogsStorageTableName]" />
+            <Parameter Name="ExternalizationQueueName" Value="[ExternalizationQueueName]" />
+            <Parameter Name="SimulationQueueName" Value="[SimulationQueueName]" />
+            <Parameter Name="BackupQueueName" Value="[BackupQueueName]" />
+            <Parameter Name="LogQueueName" Value="[LogQueueName]" />
+            <Parameter Name="IsTicketAvailabilityCheck" Value="[IsTicketAvailabilityCheck]" />
+            <Parameter Name="IsEtwLogging" Value="[IsEtwLogging]" />
+            <Parameter Name="IsAzureTableStorageLogging" Value="[IsAzureTableStorageLogging]" />
+            <Parameter Name="IsAzureFunctionLogging" Value="[IsAzureFunctionLogging]" />
+            <Parameter Name="StatefulServiceLoopPause" Value="[StatefulServiceLoopPause]" />
+            <Parameter Name="HealthIssuesTimeToLive" Value="[HealthIssuesTimeToLive]" />
+            <Parameter Name="EmailServerUrl" Value="[EmailServerUrl]" />
+            <Parameter Name="EmailServerPort" Value="[EmailServerPort]" />
+            <Parameter Name="EmailServerUserName" Value="[EmailServerUserName]" />
+            <Parameter Name="EmailServerPassword" Value="[EmailServerPassword]" />
+          </Section>
+        </Settings>
+      </ConfigOverride>
+    </ConfigOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="ContosoEvents.WebApiPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides>
+      <ConfigOverride Name="Config">
+        <Settings>
+          <Section Name="ServiceRunTimeConfig">
+            <Parameter Name="DataStorageEndpointUri" Value="[DataStorageEndpointUri]" />
+            <Parameter Name="DataStoragePrimaryKey" Value="[DataStoragePrimaryKey]" />
+            <Parameter Name="DataStorageDatabaseName" Value="[DataStorageDatabaseName]" />
+            <Parameter Name="DataStorageEventsCollectionName" Value="[DataStorageEventsCollectionName]" />
+            <Parameter Name="DataStorageOrdersCollectionName" Value="[DataStorageOrdersCollectionName]" />
+            <Parameter Name="DataStorageLogMessagesCollectionName" Value="[DataStorageLogMessagesCollectionName]" />
+            <Parameter Name="StorageConnectionString" Value="[StorageConnectionString]" />
+            <Parameter Name="LogsStorageTableName" Value="[LogsStorageTableName]" />
+            <Parameter Name="ExternalizationQueueName" Value="[ExternalizationQueueName]" />
+            <Parameter Name="SimulationQueueName" Value="[SimulationQueueName]" />
+            <Parameter Name="BackupQueueName" Value="[BackupQueueName]" />
+            <Parameter Name="LogQueueName" Value="[LogQueueName]" />
+            <Parameter Name="IsEtwLogging" Value="[IsEtwLogging]" />
+            <Parameter Name="IsAzureTableStorageLogging" Value="[IsAzureTableStorageLogging]" />
+            <Parameter Name="IsAzureFunctionLogging" Value="[IsAzureFunctionLogging]" />
+            <Parameter Name="HealthIssuesTimeToLive" Value="[HealthIssuesTimeToLive]" />
+            <Parameter Name="EmailServerUrl" Value="[EmailServerUrl]" />
+            <Parameter Name="EmailServerPort" Value="[EmailServerPort]" />
+            <Parameter Name="EmailServerUserName" Value="[EmailServerUserName]" />
+            <Parameter Name="EmailServerPassword" Value="[EmailServerPassword]" />
+          </Section>
+        </Settings>
+      </ConfigOverride>
+    </ConfigOverrides>
+  </ServiceManifestImport>
+  <DefaultServices>
+    <!-- The section below creates instances of service types, when an instance of this 
+         application type is created. You can also create one or more instances of service type using the 
+         ServiceFabric PowerShell module.
+         
+         The attribute ServiceTypeName below must match the name defined in the imported ServiceManifest.xml file. -->
+    <Service Name="TicketOrderService">
+      <StatefulService ServiceTypeName="TicketOrderServiceType" TargetReplicaSetSize="[TicketOrderService_TargetReplicaSetSize]" MinReplicaSetSize="[TicketOrderService_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[TicketOrderService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="WebApi">
+      <StatelessService ServiceTypeName="WebApiType" InstanceCount="[WebApi_InstanceCount]">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
+    <Service Name="TicketOrderActorService" GeneratedIdRef="c47ef007-91cf-402e-9c96-cbae5927967e|Persisted">
+      <StatefulService ServiceTypeName="TicketOrderActorServiceType" TargetReplicaSetSize="[TicketOrderActorService_TargetReplicaSetSize]" MinReplicaSetSize="[TicketOrderActorService_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[TicketOrderActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="EventActorService" GeneratedIdRef="19e832cb-9a31-4d69-b28e-ccef20c51157|Persisted">
+      <StatefulService ServiceTypeName="EventActorServiceType" TargetReplicaSetSize="[EventActorService_TargetReplicaSetSize]" MinReplicaSetSize="[EventActorService_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[EventActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+  </DefaultServices>
+</ApplicationManifest>

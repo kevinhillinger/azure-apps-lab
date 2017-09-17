@@ -1,0 +1,30 @@
+﻿@model IList<Event>
+@{
+    ViewBag.Title = "Events";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@if (Model == null || Model.Count == 0)
+{
+    <div>There are no events</div>
+}
+else
+{
+    <table class="table-hover data-table">
+        <tr>
+            <th class="data-table-head">Event Name</th>
+            <th class="data-table-head">Time Frame</th>
+            <th class="data-table-head">Price</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(item.Name, "Details", new { id = item.Id })</td>
+                <td>@item.StartDate.ToShortDateString() @item.StartDate.ToShortTimeString() - @item.EndDate.ToShortDateString() @item.EndDate.ToShortTimeString()</td>
+                <td>@item.PricePerTicket @item.Currency</td>
+            </tr>
+        }
+    </table>
+}

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <!-- This is used by the StateManager's replicator. -->
+  <Section Name="ReplicatorConfig">
+    <Parameter Name="ReplicatorEndpoint" Value="ReplicatorEndpoint" />
+  </Section>
+  <!-- This is used for securing StateManager's replication traffic. -->
+  <Section Name="ReplicatorSecurityConfig" />
+
+  <!-- This is used to provide application-level configuration settings -->
+  <Section Name="ServiceRunTimeConfig">
+    <Parameter Name="DataStorageEndpointUri" Value="" />
+    <Parameter Name="DataStoragePrimaryKey" Value="" />
+    <Parameter Name="DataStorageDatabaseName" Value="" />
+    <Parameter Name="DataStorageEventsCollectionName" Value="" />
+    <Parameter Name="DataStorageOrdersCollectionName" Value="" />
+    <Parameter Name="DataStorageLogMessagesCollectionName" Value="" />
+    <Parameter Name="StorageConnectionString" Value="" />
+    <Parameter Name="LogsStorageTableName" Value="" />
+    <Parameter Name="ExternalizationQueueName" Value=""/>
+    <Parameter Name="SimulationQueueName" Value=""/>
+    <Parameter Name="BackupQueueName" Value=""/>
+    <Parameter Name="LogQueueName" Value=""/>
+    <Parameter Name="IsTicketAvailabilityCheck" Value="" />
+    <Parameter Name="IsEtwLogging" Value="" />
+    <Parameter Name="IsAzureTableStorageLogging" Value="" />
+    <Parameter Name="IsAzureFunctionLogging" Value="" />
+    <Parameter Name="StatefulServiceLoopPause" Value="1" />
+    <Parameter Name="HealthIssuesTimeToLive" Value="" />
+    <Parameter Name="EmailServerUrl" Value="" />
+    <Parameter Name="EmailServerPort" Value="" />
+    <Parameter Name="EmailServerUserName" Value="" />
+    <Parameter Name="EmailServerPassword" Value="" />
+  </Section>
+</Settings>

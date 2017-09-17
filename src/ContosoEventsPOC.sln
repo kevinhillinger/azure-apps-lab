@@ -1,0 +1,113 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "ContosoEventsApp", "ContosoEventsApp\ContosoEventsApp.sfproj", "{D18AC1CF-4FB3-42AE-B280-F4F7C2CDAD3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoEvents.WebApi", "ContosoEvents.WebApi\ContosoEvents.WebApi.csproj", "{B4AFE5C1-8B5B-4C8E-91E9-3262AB26F9A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoEvents.Shared", "ContosoEvents.Shared\ContosoEvents.Shared.csproj", "{9214E989-A2D0-4426-A871-60EB147FC7BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoEvents.TicketOrderService", "ContooEvents.TicketOrderService\ContosoEvents.TicketOrderService.csproj", "{68F08CB5-B992-4F4D-BF79-851D14FAAFE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoEvents.TicketOrderActor", "ContosoEvents.TicketOrderActor\ContosoEvents.TicketOrderActor.csproj", "{8E7E9A3C-5143-44F6-92A8-6361B7F7A998}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoEvents.EventActor", "ContosoEvents.EventActor\ContosoEvents.EventActor.csproj", "{8A415628-1E4A-4389-9012-A83CBE13C720}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoEvents.Models", "ContosoEvents.Models\ContosoEvents.Models.csproj", "{11C8E130-B980-4D6A-967B-622A1C28EC2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{EF87BD6C-5390-4685-AA7A-53EF42A94DF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service Fabric", "Service Fabric", "{C6BCBD88-BA75-497C-8181-128E9C4F2A51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{6ED873F9-1E7E-4DB7-B029-FEB2F580F2BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Azure Functions", "Azure Functions", "{3E1F40A5-A30E-4169-895C-714EDCA8F1C6}"
+	ProjectSection(SolutionItems) = preProject
+		AzureFunctions\ProcessLogMessage.cs = AzureFunctions\ProcessLogMessage.cs
+		AzureFunctions\ProcessTicketOrderExternalizationEvent.cs = AzureFunctions\ProcessTicketOrderExternalizationEvent.cs
+		AzureFunctions\ProcessTicketOrderSimulationRequest.ps1 = AzureFunctions\ProcessTicketOrderSimulationRequest.ps1
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoEvents.Web", "ContosoEvents.Web\ContosoEvents.Web.csproj", "{9A5C7EFA-77A4-45FE-8BA6-7A08C1B8F63B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D18AC1CF-4FB3-42AE-B280-F4F7C2CDAD3F}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{D18AC1CF-4FB3-42AE-B280-F4F7C2CDAD3F}.Debug|x64.ActiveCfg = Debug|x64
+		{D18AC1CF-4FB3-42AE-B280-F4F7C2CDAD3F}.Debug|x64.Build.0 = Debug|x64
+		{D18AC1CF-4FB3-42AE-B280-F4F7C2CDAD3F}.Debug|x64.Deploy.0 = Debug|x64
+		{D18AC1CF-4FB3-42AE-B280-F4F7C2CDAD3F}.Release|Any CPU.ActiveCfg = Release|x64
+		{D18AC1CF-4FB3-42AE-B280-F4F7C2CDAD3F}.Release|x64.ActiveCfg = Release|x64
+		{D18AC1CF-4FB3-42AE-B280-F4F7C2CDAD3F}.Release|x64.Build.0 = Release|x64
+		{D18AC1CF-4FB3-42AE-B280-F4F7C2CDAD3F}.Release|x64.Deploy.0 = Release|x64
+		{B4AFE5C1-8B5B-4C8E-91E9-3262AB26F9A3}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{B4AFE5C1-8B5B-4C8E-91E9-3262AB26F9A3}.Debug|x64.ActiveCfg = Debug|x64
+		{B4AFE5C1-8B5B-4C8E-91E9-3262AB26F9A3}.Debug|x64.Build.0 = Debug|x64
+		{B4AFE5C1-8B5B-4C8E-91E9-3262AB26F9A3}.Release|Any CPU.ActiveCfg = Release|x64
+		{B4AFE5C1-8B5B-4C8E-91E9-3262AB26F9A3}.Release|x64.ActiveCfg = Release|x64
+		{B4AFE5C1-8B5B-4C8E-91E9-3262AB26F9A3}.Release|x64.Build.0 = Release|x64
+		{9214E989-A2D0-4426-A871-60EB147FC7BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9214E989-A2D0-4426-A871-60EB147FC7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9214E989-A2D0-4426-A871-60EB147FC7BE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9214E989-A2D0-4426-A871-60EB147FC7BE}.Debug|x64.Build.0 = Debug|Any CPU
+		{9214E989-A2D0-4426-A871-60EB147FC7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9214E989-A2D0-4426-A871-60EB147FC7BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9214E989-A2D0-4426-A871-60EB147FC7BE}.Release|x64.ActiveCfg = Release|Any CPU
+		{9214E989-A2D0-4426-A871-60EB147FC7BE}.Release|x64.Build.0 = Release|Any CPU
+		{68F08CB5-B992-4F4D-BF79-851D14FAAFE3}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{68F08CB5-B992-4F4D-BF79-851D14FAAFE3}.Debug|x64.ActiveCfg = Debug|x64
+		{68F08CB5-B992-4F4D-BF79-851D14FAAFE3}.Debug|x64.Build.0 = Debug|x64
+		{68F08CB5-B992-4F4D-BF79-851D14FAAFE3}.Release|Any CPU.ActiveCfg = Release|x64
+		{68F08CB5-B992-4F4D-BF79-851D14FAAFE3}.Release|x64.ActiveCfg = Release|x64
+		{68F08CB5-B992-4F4D-BF79-851D14FAAFE3}.Release|x64.Build.0 = Release|x64
+		{8E7E9A3C-5143-44F6-92A8-6361B7F7A998}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{8E7E9A3C-5143-44F6-92A8-6361B7F7A998}.Debug|x64.ActiveCfg = Debug|x64
+		{8E7E9A3C-5143-44F6-92A8-6361B7F7A998}.Debug|x64.Build.0 = Debug|x64
+		{8E7E9A3C-5143-44F6-92A8-6361B7F7A998}.Release|Any CPU.ActiveCfg = Release|x64
+		{8E7E9A3C-5143-44F6-92A8-6361B7F7A998}.Release|x64.ActiveCfg = Release|x64
+		{8E7E9A3C-5143-44F6-92A8-6361B7F7A998}.Release|x64.Build.0 = Release|x64
+		{8A415628-1E4A-4389-9012-A83CBE13C720}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{8A415628-1E4A-4389-9012-A83CBE13C720}.Debug|x64.ActiveCfg = Debug|x64
+		{8A415628-1E4A-4389-9012-A83CBE13C720}.Debug|x64.Build.0 = Debug|x64
+		{8A415628-1E4A-4389-9012-A83CBE13C720}.Release|Any CPU.ActiveCfg = Release|x64
+		{8A415628-1E4A-4389-9012-A83CBE13C720}.Release|x64.ActiveCfg = Release|x64
+		{8A415628-1E4A-4389-9012-A83CBE13C720}.Release|x64.Build.0 = Release|x64
+		{11C8E130-B980-4D6A-967B-622A1C28EC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11C8E130-B980-4D6A-967B-622A1C28EC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11C8E130-B980-4D6A-967B-622A1C28EC2D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{11C8E130-B980-4D6A-967B-622A1C28EC2D}.Debug|x64.Build.0 = Debug|Any CPU
+		{11C8E130-B980-4D6A-967B-622A1C28EC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11C8E130-B980-4D6A-967B-622A1C28EC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11C8E130-B980-4D6A-967B-622A1C28EC2D}.Release|x64.ActiveCfg = Release|Any CPU
+		{11C8E130-B980-4D6A-967B-622A1C28EC2D}.Release|x64.Build.0 = Release|Any CPU
+		{9A5C7EFA-77A4-45FE-8BA6-7A08C1B8F63B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A5C7EFA-77A4-45FE-8BA6-7A08C1B8F63B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A5C7EFA-77A4-45FE-8BA6-7A08C1B8F63B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9A5C7EFA-77A4-45FE-8BA6-7A08C1B8F63B}.Debug|x64.Build.0 = Debug|Any CPU
+		{9A5C7EFA-77A4-45FE-8BA6-7A08C1B8F63B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A5C7EFA-77A4-45FE-8BA6-7A08C1B8F63B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A5C7EFA-77A4-45FE-8BA6-7A08C1B8F63B}.Release|x64.ActiveCfg = Release|Any CPU
+		{9A5C7EFA-77A4-45FE-8BA6-7A08C1B8F63B}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D18AC1CF-4FB3-42AE-B280-F4F7C2CDAD3F} = {C6BCBD88-BA75-497C-8181-128E9C4F2A51}
+		{B4AFE5C1-8B5B-4C8E-91E9-3262AB26F9A3} = {C6BCBD88-BA75-497C-8181-128E9C4F2A51}
+		{9214E989-A2D0-4426-A871-60EB147FC7BE} = {C6BCBD88-BA75-497C-8181-128E9C4F2A51}
+		{68F08CB5-B992-4F4D-BF79-851D14FAAFE3} = {C6BCBD88-BA75-497C-8181-128E9C4F2A51}
+		{8E7E9A3C-5143-44F6-92A8-6361B7F7A998} = {C6BCBD88-BA75-497C-8181-128E9C4F2A51}
+		{8A415628-1E4A-4389-9012-A83CBE13C720} = {C6BCBD88-BA75-497C-8181-128E9C4F2A51}
+		{11C8E130-B980-4D6A-967B-622A1C28EC2D} = {EF87BD6C-5390-4685-AA7A-53EF42A94DF3}
+		{9A5C7EFA-77A4-45FE-8BA6-7A08C1B8F63B} = {6ED873F9-1E7E-4DB7-B029-FEB2F580F2BD}
+	EndGlobalSection
+EndGlobal

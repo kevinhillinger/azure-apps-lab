@@ -1,0 +1,48 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "nameSuffix": {
+            "type": "string"
+        }
+    },
+   "variables": {
+      "sku": "Standard",
+      "skuCode": "S1",
+      "hostingPlanName": "ContosoEventsAppPlan0",
+      "siteName": "[concat('contosoweb-', parameters('nameSuffix'))]"
+   },
+    "resources": [
+        {
+            "apiVersion": "2016-03-01",
+            "name": "[variables('siteName')]",
+            "type": "Microsoft.Web/sites",
+            "properties": {
+                "name": "[variables('siteName')]",
+                "serverFarmId": "[variables('hostingPlanName')]",
+                "hostingEnvironment": ""
+            },
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[concat('Microsoft.Web/serverfarms/', variables('hostingPlanName'))]"
+            ]
+        },
+        {
+            "apiVersion": "2016-09-01",
+            "name": "[variables('hostingPlanName')]",
+            "type": "Microsoft.Web/serverfarms",
+            "location": "[parameters('location')]",
+            "properties": {
+                "name": "[variables('hostingPlanName')]",
+                "workerSizeId": "0",
+                "reserved": false,
+                "numberOfWorkers": "1",
+                "hostingEnvironment": ""
+            },
+            "sku": {
+                "Tier": "[variables('sku')]",
+                "Name": "[variables('skuCode')]"
+            }
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+﻿@model Tuple<bool, string>
+@{
+    ViewBag.Title = "Result";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@if (Model.Item1)
+{
+    <h1>Success!</h1>
+    <p>Order id: @Model.Item2</p>
+}
+else
+{
+    <h1>Failed!</h1>
+}

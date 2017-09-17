@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="fabric:/ContosoEventsApp" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="TicketOrderService_PartitionCount" Value="1" />
+    <Parameter Name="TicketOrderService_MinReplicaSetSize" Value="1" />
+    <Parameter Name="TicketOrderService_TargetReplicaSetSize" Value="1" />
+    <Parameter Name="WebApi_InstanceCount" Value="1" />
+    <Parameter Name="TicketOrderActorService_PartitionCount" Value="1" />
+    <Parameter Name="EventActorService_PartitionCount" Value="1" />
+    <Parameter Name="DataStorageEndpointUri" Value="" />
+    <Parameter Name="DataStoragePrimaryKey" Value="" />
+    <Parameter Name="DataStorageDatabaseName" Value="TicketManager" />
+    <Parameter Name="DataStorageEventsCollectionName" Value="Events" />
+    <Parameter Name="DataStorageOrdersCollectionName" Value="Orders" />
+    <Parameter Name="DataStorageLogMessagesCollectionName" Value="LogMessages" />
+    <Parameter Name="StorageConnectionString" Value="" />
+    <Parameter Name="LogsStorageTableName" Value="devlogs" />
+    <Parameter Name="ExternalizationQueueName" Value="ticketorders-externalization" />
+    <Parameter Name="SimulationQueueName" Value="ticketorders-simulation-requests" />
+    <Parameter Name="BackupQueueName" Value="" />
+    <Parameter Name="LogQueueName" Value="" />
+    <Parameter Name="IsTicketAvailabilityCheck" Value="true" />
+    <Parameter Name="IsEtwLogging" Value="false" />
+    <Parameter Name="IsAzureTableStorageLogging" Value="false" />
+    <Parameter Name="IsAzureFunctionLogging" Value="false" />
+    <Parameter Name="StatefulServiceLoopPause" Value="500" />
+    <Parameter Name="ActorBackupReminderDueInMinutes" Value="10" />
+    <Parameter Name="ActorBackupReminderPeriodicInMinutes" Value="60" />
+    <Parameter Name="HealthIssuesTimeToLive" Value="20" />
+    <Parameter Name="EmailServerUrl" Value="smtp.gmail.com" />
+    <Parameter Name="EmailServerPort" Value="587" />
+    <Parameter Name="EmailServerUserName" Value="" />
+    <Parameter Name="EmailServerPassword" Value="" />
+    <Parameter Name="TicketOrderActorService_TargetReplicaSetSize" Value="1" />
+    <Parameter Name="TicketOrderActorService_MinReplicaSetSize" Value="1" />
+    <Parameter Name="EventActorService_TargetReplicaSetSize" Value="1" />
+    <Parameter Name="EventActorService_MinReplicaSetSize" Value="1" />
+  </Parameters>
+</Application>

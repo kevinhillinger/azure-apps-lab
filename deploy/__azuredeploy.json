@@ -1,0 +1,108 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "metadata": {
+        "description": "The location of resources"
+      },
+      "defaultValue": "westus"
+    },
+   "apiAdminEmail": {
+      "type": "string",
+      "metadata": {
+        "description": "Admin email address for API Management"
+      }
+    },
+    "adminUsername": {
+      "type": "string",
+      "metadata": {
+        "description": "Admin username"
+      }
+    },
+    "adminPassword": {
+      "type": "securestring",
+      "metadata": {
+        "description": "Admin password"
+      }
+    }
+  },
+
+  "variables": {
+    "templateUriBase": "https://raw.githubusercontent.com/kevinhillinger/azure-apps-lab/master/deploy"
+
+  },
+  "resources": [
+   {
+      "apiVersion": "2015-01-01",
+      "name": "serviceFabricDeployment",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('templateUriBase'),'/servicefabric.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+            "nameSuffix": { "value": "[toLower(uniqueString(resourceGroup().id))]" },
+            "location": { "value": "[resourceGroup().location]" },
+            "adminUserName": { "value": "[parameters('adminUserName')]" },
+            "adminPassword": { "value": "[parameters('adminPassword')]" },
+            "vmNodeType0Size": { "value": "Standard_D1_v2" }
+        }
+      }
+    },
+   {
+      "apiVersion": "2015-01-01",
+      "name": "apiManagementDeployment",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('templateUriBase'),'/apimanagement.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+            "name": { "value": "[concat('contoso-', parameters('nameSuffix'))]" },
+            "location": { "value": "[resourceGroup().location]" },
+            "adminEmail": { "value": "[parameters('apiAdminEmail)]"}
+        }
+      }
+    },
+   {
+      "apiVersion": "2015-01-01",
+      "name": "webappDeployment",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('templateUriBase'),'/webapp.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+            "nameSuffix": { "value": "[parameters('nameSuffix')]" },
+            "location": { "value": "[resourceGroup().location]" }
+        }
+      }
+    },
+   {
+      "apiVersion": "2015-01-01",
+      "name": "webappDeployment",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(parameters('templateUriBase'),'/webapp.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+            "nameSuffix": { "value": "[parameters('nameSuffix')]" },
+            "location": { "value": "[resourceGroup().location]" }
+        }
+      }
+    }
+  ],
+  "outputs": {
+  }
+}
