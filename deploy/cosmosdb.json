@@ -2,25 +2,16 @@
     "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "name": {
+        "nameSuffix": {
             "type": "string"
         },
         "location": {
             "type": "string"
-        },
-        "locationName": {
-            "type": "string"
-        },
-        "defaultExperience": {
-            "type": "string"
-        },
-        "pairedLocation": {
-            "type": "string"
-        },
-        "pairedLocationName": {
-            "type": "string"
         }
     },
+   "variables": {
+      "name": "[concat('contosodb-', parameters('nameSuffix'), '-', take(uniqueString(resourceGroup().name), 3) )]"
+   },
     "resources": [
         {
             "apiVersion": "2015-04-08",
@@ -32,14 +23,14 @@
                 "databaseAccountOfferType": "Standard",
                 "locations": [
                     {
-                        "id": "[concat(parameters('name'), '-', parameters('location'))]",
+                        "id": "[concat(variables('name'), '-', parameters('location'))]",
                         "failoverPriority": 0,
-                        "locationName": "[parameters('locationName')]"
+                        "locationName": "[parameters('location')]"
                     }
                 ]
             },
             "tags": {
-                "defaultExperience": "[parameters('defaultExperience')]"
+                "defaultExperience": "DocumentDB"
             }
         }
     ]

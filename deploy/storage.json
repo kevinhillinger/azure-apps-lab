@@ -2,31 +2,28 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "name": {
+        "nameSuffix": {
             "type": "string"
         },
         "location": {
             "type": "string"
-        },
-        "accountType": {
-            "type": "string"
-        },
-        "httpsTrafficOnlyEnabled": {
-            "type": "bool"
         }
     },
+   "variables": {
+      "name": "[concat('contoso', take(uniqueString(resourceGroup().name), 3), parameters('nameSuffix'))]"
+   },
     "resources": [
         {
             "apiVersion": "2017-06-01",
-            "name": "[parameters('name')]",
+            "name": "[variables('name')]",
             "location": "[parameters('location')]",
             "type": "Microsoft.Storage/storageAccounts",
             "sku": {
-                "name": "[parameters('accountType')]"
+                "name": "Standard_LRS"
             },
             "kind": "Storage",
             "properties": {
-                "supportsHttpsTrafficOnly": "[parameters('httpsTrafficOnlyEnabled')]"
+                "supportsHttpsTrafficOnly": false
             },
             "dependsOn": []
         }

@@ -58,10 +58,10 @@
         "mode": "Incremental",
         "templateLink": {
           "uri": "[concat(variables('templateUriBase'),'apimanagement.json')]",
-          "contentVersion": "1.0.0.0"
+          "contentVersion": "1.0.0.1"
         },
         "parameters": {
-            "name": { "value": "[concat('contoso-', variables('nameSuffix'))]" },
+            "nameSuffix": { "value": "[variables('nameSuffix')]" },
             "location": { "value": "[resourceGroup().location]" },
             "adminEmail": { "value": "[variables('apiAdminEmail')]"}
         }
@@ -91,6 +91,38 @@
         "mode": "Incremental",
         "templateLink": {
           "uri": "[concat(variables('templateUriBase'),'functionapp.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+            "nameSuffix": { "value": "[variables('nameSuffix')]" },
+            "location": { "value": "[resourceGroup().location]" }
+        }
+      }
+    },
+   {
+      "apiVersion": "2015-01-01",
+      "name": "storageDeployment",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(variables('templateUriBase'),'storage.json')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+            "nameSuffix": { "value": "[variables('nameSuffix')]" },
+            "location": { "value": "[resourceGroup().location]" }
+        }
+      }
+    },
+   {
+      "apiVersion": "2015-01-01",
+      "name": "cosmosDbDeployment",
+      "type": "Microsoft.Resources/deployments",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[concat(variables('templateUriBase'),'cosmosdb.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
