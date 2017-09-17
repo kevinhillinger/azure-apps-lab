@@ -88,12 +88,12 @@
     },
    {
       "apiVersion": "2015-01-01",
-      "name": "webappDeployment",
+      "name": "functionAppDeployment",
       "type": "Microsoft.Resources/deployments",
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[concat(parameters('templateUriBase'),'/webapp.json')]",
+          "uri": "[concat(parameters('templateUriBase'),'/functionapp.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
