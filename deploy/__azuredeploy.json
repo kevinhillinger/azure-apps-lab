@@ -2,27 +2,23 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "location": {
-      "type": "string",
-      "metadata": {
-        "description": "The location of resources"
-      },
-      "defaultValue": "westus"
-    },
    "apiAdminEmail": {
       "type": "string",
+      "defaultValue": "<your_alias>@microsoft.com",
       "metadata": {
         "description": "Admin email address for API Management"
       }
     },
     "adminUsername": {
       "type": "string",
+      "defaultValue": "appsadmin",
       "metadata": {
         "description": "Admin username"
       }
     },
     "adminPassword": {
       "type": "securestring",
+      "defaultValue": "c0ntosoEven+s",
       "metadata": {
         "description": "Admin password"
       }
@@ -66,7 +62,7 @@
         "parameters": {
             "name": { "value": "[concat('contoso-', parameters('nameSuffix'))]" },
             "location": { "value": "[resourceGroup().location]" },
-            "adminEmail": { "value": "[parameters('apiAdminEmail)]"}
+            "adminEmail": { "value": "[parameters('apiAdminEmail')]"}
         }
       }
     },

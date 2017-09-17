@@ -1,9 +1,9 @@
 # Azure Apps Lab
 
-## Lab Scenario
+### Lab Scenario
 Contoso Events is a SaaS provider with an online service for concerts, sporting and other event ticket sales. They are redesigning their solution for scale with a microservices strategy and want to implement a POC for the path that receives the most traffic: ticket ordering.
 
-## Objective
+### Objective
 In this lab, you will construct and test an end-to-end POC of the Ticket Ordering subsystem to demonstrate to Contoso Events a deployment using Azure PaaS. You will leverage Service Fabric, API Management, Function Apps, Web Apps, Cosmos DB and Azure Active Directory B2C. 
 
 
