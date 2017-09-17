@@ -7,13 +7,13 @@
     <Parameter Name="WebApi_InstanceCount" Value="1" />
     <Parameter Name="TicketOrderActorService_PartitionCount" Value="1" />
     <Parameter Name="EventActorService_PartitionCount" Value="1" />
-    <Parameter Name="DataStorageEndpointUri" Value="" />
-    <Parameter Name="DataStoragePrimaryKey" Value="" />
+    <Parameter Name="DataStorageEndpointUri" Value="https://contosodb-kehilli-yg5.documents.azure.com:443/" />
+    <Parameter Name="DataStoragePrimaryKey" Value="Y5D9KPQCNtKy7mlSAAFZzGgtKLQDwZ8HobyudxyS0g8bXkYLZoe5834Ff4gCnVZHTx0BNgqNYts0lyLzfkwwrw==" />
     <Parameter Name="DataStorageDatabaseName" Value="TicketManager" />
     <Parameter Name="DataStorageEventsCollectionName" Value="Events" />
     <Parameter Name="DataStorageOrdersCollectionName" Value="Orders" />
     <Parameter Name="DataStorageLogMessagesCollectionName" Value="LogMessages" />
-    <Parameter Name="StorageConnectionString" Value="" />
+    <Parameter Name="StorageConnectionString" Value="DefaultEndpointsProtocol=https;AccountName=contosoyg5kehilli;AccountKey=zRlle8DYOMzmk9IpvT9a7bwVeyiIUM1RuH1VqAmLZtOpAGlVHf8dWp7TY6MjtNUF6LsQmAKFpOS2sNmqnrgg8A==;EndpointSuffix=core.windows.net" />
     <Parameter Name="LogsStorageTableName" Value="devlogs" />
     <Parameter Name="ExternalizationQueueName" Value="ticketorders-externalization" />
     <Parameter Name="SimulationQueueName" Value="ticketorders-simulation-requests" />

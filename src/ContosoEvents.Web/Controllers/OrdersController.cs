@@ -11,7 +11,8 @@ namespace ContosoEvents.Web.Controllers
     {
         public ActionResult Index()
         {
-            var orders = ContosoEventsApi.GetUserOrders(ClaimsPrincipal.Current.GetUserId());
+            var username = ClaimsPrincipal.Current.GetUserId() ?? Request.QueryString["username"];
+            var orders = ContosoEventsApi.GetUserOrders(username);
 
             return View(orders);
         }
