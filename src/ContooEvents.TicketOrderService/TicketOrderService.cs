@@ -43,10 +43,6 @@ namespace ContosoEvents.TicketOrderService
             this.LoggerService = ServiceFactory.GetInstance().GetLoggerService();
             this.ActorLocationService = ServiceFactory.GetInstance().GetActorLocationService();
             this.HealthReporterService = ServiceFactory.GetInstance().GetHealtheReporterService(this.SettingService, this.LoggerService, Context.PartitionId, Context.ReplicaId, Context.NodeContext.NodeName, Context.ServiceName.ToString());
-
-            //TODO: Exercise 7 - Task 1
-            // Uncomment this line to cause a simulated failure upon upgrade!
-            //this.HealthReporterService.SendReportForService(HealthState.Error, "Simulated Error");
         }
 
         /// <summary>
