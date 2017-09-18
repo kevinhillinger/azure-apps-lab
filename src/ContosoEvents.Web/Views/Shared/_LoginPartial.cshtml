@@ -1,6 +1,5 @@
-﻿@*TODO Exercise 10 - Task 3  - uncomment everything below to enable sign in / user status*@
-@*@if (
-    Request.IsAuthenticated)
+﻿
+@if (Request.IsAuthenticated)
 {
     <text>
         <ul class="nav navbar-nav navbar-right">
@@ -26,4 +25,4 @@ else
         <li><a id="signUpLink" href="@Url.Action("SignUp", "Account")"><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
         <li><a id="loginLink" href="@Url.Action("SignIn", "Account")"><span class="glyphicon glyphicon-log-in"></span> Sign in</a></li>
     </ul>
-}*@
+}

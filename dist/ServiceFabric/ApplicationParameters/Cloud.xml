@@ -7,13 +7,17 @@
     <Parameter Name="WebApi_InstanceCount" Value="5" />
     <Parameter Name="TicketOrderActorService_PartitionCount" Value="5" />
     <Parameter Name="EventActorService_PartitionCount" Value="1" />
+
     <Parameter Name="DataStorageEndpointUri" Value="" />
     <Parameter Name="DataStoragePrimaryKey" Value="" />
+
     <Parameter Name="DataStorageDatabaseName" Value="TicketManager" />
     <Parameter Name="DataStorageEventsCollectionName" Value="Events" />
     <Parameter Name="DataStorageOrdersCollectionName" Value="Orders" />
     <Parameter Name="DataStorageLogMessagesCollectionName" Value="LogMessages" />
+
     <Parameter Name="StorageConnectionString" Value="" />
+    
     <Parameter Name="LogsStorageTableName" Value="prodlogs" />
     <Parameter Name="ExternalizationQueueName" Value="ticketorders-externalization" />
     <Parameter Name="SimulationQueueName" Value="ticketorders-simulation-requests" />

@@ -8,8 +8,8 @@ namespace ContosoEvents.Web
     {
         public void Configuration(IAppBuilder app)
         {
-            //TODO Exercise 10 - Task 3 - uncomment the following line to initialize the authentication middleware
-            //ConfigureAuth(app);
+            //initialize the authentication middleware
+            ConfigureAuth(app);
         }
     }
 }

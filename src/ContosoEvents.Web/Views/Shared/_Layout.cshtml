@@ -21,16 +21,13 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @*TODO Exercise 10 - Task 3 - replace the next 3 lines with the comment below it *@
-                    <li><a href="@Url.Action("Index", "Orders")"><span class="glyphicon glyphicon-shopping-cart"></span> Orders</a></li>
-                    <li><a href="@Url.Action("Index", "LoadTest")"><span class="glyphicon glyphicon-flash"></span> LoadTest</a></li>
-                    <li><a href="@Url.Action("Status", "LoadTest")"><span class="glyphicon glyphicon-stats"></span> LoadTest Status</a></li>
-                    @*@if (Request.IsAuthenticated)
+    
+                    @if (Request.IsAuthenticated)
                     {
                         <li><a href="@Url.Action("Index", "Orders")"><span class="glyphicon glyphicon-shopping-cart"></span> Orders</a></li>
                         <li><a href="@Url.Action("Index", "LoadTest")"><span class="glyphicon glyphicon-flash"></span> LoadTest</a></li>
                         <li><a href="@Url.Action("Status", "LoadTest")"><span class="glyphicon glyphicon-stats"></span> LoadTest Status</a></li>
-                    }*@
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
