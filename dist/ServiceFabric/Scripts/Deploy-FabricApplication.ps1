@@ -175,7 +175,6 @@ $publishProfile = Read-PublishProfile $PublishProfileFile
 if (-not $UseExistingClusterConnection)
 {
     $ClusterConnectionParameters = $publishProfile.ClusterConnectionParameters
-
     if ($SecurityToken)
     {
         $ClusterConnectionParameters["SecurityToken"] = $SecurityToken
@@ -224,7 +223,6 @@ if ($CopyPackageTimeoutSec)
 if ($IsUpgrade)
 {
     $Action = "RegisterAndUpgrade"
-
     if ($DeployOnly)
     {
         $Action = "Register"

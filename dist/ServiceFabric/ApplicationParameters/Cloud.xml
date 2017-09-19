@@ -8,15 +8,15 @@
     <Parameter Name="TicketOrderActorService_PartitionCount" Value="5" />
     <Parameter Name="EventActorService_PartitionCount" Value="1" />
 
-    <Parameter Name="DataStorageEndpointUri" Value="" />
-    <Parameter Name="DataStoragePrimaryKey" Value="" />
+    <Parameter Name="DataStorageEndpointUri" Value="[COSMOS_DB_ENDPOINT_URI]" />
+    <Parameter Name="DataStoragePrimaryKey" Value="[COSMOS_DB_PRIMARY_KEY]" />
 
     <Parameter Name="DataStorageDatabaseName" Value="TicketManager" />
     <Parameter Name="DataStorageEventsCollectionName" Value="Events" />
     <Parameter Name="DataStorageOrdersCollectionName" Value="Orders" />
     <Parameter Name="DataStorageLogMessagesCollectionName" Value="LogMessages" />
-
-    <Parameter Name="StorageConnectionString" Value="" />
+    
+    <Parameter Name="StorageConnectionString" Value="[STORAGE_ACCOUNT_CONNECTION_STRING]" />
     
     <Parameter Name="LogsStorageTableName" Value="prodlogs" />
     <Parameter Name="ExternalizationQueueName" Value="ticketorders-externalization" />
