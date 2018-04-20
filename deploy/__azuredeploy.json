@@ -2,11 +2,11 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.12",
   "parameters": {
-     "microsoftAlias": {
+     "alias": {
       "type": "string",
-      "defaultValue": "<your_msft_alias>",
+      "defaultValue": "<your_alias>",
       "metadata": {
-        "description": "Your Microsoft alias (this will be used for the suffix that will be appended to resource names as well as to set administrator email for the API Management)."
+        "description": "Your alias (this will be used for the suffix that will be appended to resource names)."
       }
     },
     "adminUsername": {
@@ -22,13 +22,19 @@
       "metadata": {
         "description": "Admin password for the Service Fabric cluster"
       }
+    },
+    "apiAdminEmail": {
+      "type": "string",
+      "defaultValue": "appsadmin",
+      "metadata": {
+        "description": "Sets the administrator email for the API Management"
+      }
     }
   },
 
   "variables": {
     "templateUriBase": "https://raw.githubusercontent.com/kevinhillinger/azure-apps-lab/master/deploy/",
-    "nameSuffix": "[toLower(parameters('microsoftAlias'))]",
-    "apiAdminEmail": "[concat(variables('nameSuffix'), '@microsoft.com')]"
+    "nameSuffix": "[toLower(parameters('alias'))]"
   },
   "resources": [
    {
@@ -63,7 +69,7 @@
         "parameters": {
             "nameSuffix": { "value": "[variables('nameSuffix')]" },
             "location": { "value": "[resourceGroup().location]" },
-            "adminEmail": { "value": "[variables('apiAdminEmail')]"}
+            "adminEmail": { "value": "[parameters('apiAdminEmail')]"}
         }
       }
     },
