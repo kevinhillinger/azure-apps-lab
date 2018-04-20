@@ -10,9 +10,7 @@ In this lab, you will construct and test an end-to-end POC of the Ticket Orderin
 # Getting Started
 
 ### 1. Download the lab manual
-To get started, download the lab manual located in the [Content](https://microsoft-my.sharepoint.com/:f:/p/kehilli/Eg-rrv26QYlBvFIbQTjy7LgB-6c1JX7VYwLPv-kJQWH5vg) area (restricted).
-
-If you have trouble accessing the lab manual, please email [kevin.hillinger@microsoft.com](mailto:kevin.hillinger@microsoft.com)
+To get started, download the [lab manual](https://github.com/kevinhillinger/azure-apps-lab/tree/master/docs/lab-manual.pdf) located in the [docs](https://github.com/kevinhillinger/azure-apps-lab/tree/master/docs)).
 
 ### 2. Deploy the azure resources
 The lab manual will guide you through deploying the azure resources using ARM templates located in [/deploy](https://github.com/kevinhillinger/azure-apps-lab/tree/master/deploy). If you're already familiar with ARM template deployment, click on the deploy button below.
