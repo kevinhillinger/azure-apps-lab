@@ -165,7 +165,7 @@ if (!$PublishProfileFile)
 
 if (!$ApplicationPackagePath)
 {
-    $ApplicationPackagePath = "$LocalFolder\..\pkg\Release"
+    $ApplicationPackagePath = "$LocalFolder\..\pkg\Debug"
 }
 
 $ApplicationPackagePath = Resolve-Path $ApplicationPackagePath
