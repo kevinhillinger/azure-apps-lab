@@ -27,7 +27,8 @@ namespace ContosoEvents.Web.Helpers
             var client = new RestClient(BaseUrl);
             client.AddDefaultHeader("Ocp-Apim-Subscription-Key", key);
 
-            return client.Execute<T>(request).Data;
+            var response = client.Execute<T>(request);
+            return response.Data;
         }
 
         public static IList<Event> GetEvents()
